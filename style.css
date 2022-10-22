@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #107041;
+}
+
+.selection,
+.playboard,
+.result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.selection {
+    background: #fff;
+    padding: 20px 25px 25px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.selection.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.selection header {
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.selection .title {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.selection .options {
+    display: flex;
+    width: 100%;
+}
+
+.options button {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0;
+    border: none;
+    background: #107041;
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.options button:hover,
+.btn button:hover {
+    transform: scale(0.96);
+}
+
+.options button.playerX {
+    margin-right: 5px;
+}
+
+.options button.playerO {
+    margin-left: 5px;
+}
+
+.playboard {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.playboard.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.playboard .details {
+    padding: 7px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.playboard .players {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.players span {
+    position: relative;
+    z-index: 2;
+    color: #107041;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+    transition: all 0.3 ease;
+}
+
+.players.active span:first-child {
+    color: #fff;
+}
+
+.players.active span:last-child {
+    color: #107041;
+}
+
+.players span:first-child {
+    color: #fff;
+}
+
+.players .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #107041;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.players.active .slider {
+    left: 50%;
+}
+
+.players.active span:first-child {
+    color: #107041;
+}
+
+.players.active span:nth-child(2) {
+    color: #fff;
+}
+
+.players.active .slider {
+    left: 50%;
+}
+
+.play-area {
+    margin-top: 20px;
+}
+
+.play-area section {
+    display: flex;
+    margin-bottom: 1px;
+}
+
+.play-area section span {
+    display: block;
+    height: 90px;
+    width: 90px;
+    margin: 2px;
+    color: #107041;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.result {
+    padding: 25px 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    opacity: 0;
+    text-align: center;
+    background: #fff;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.result.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.result .win {
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.result .win p {
+    font-weight: 600;
+    margin: 0 5px;
+}
+
+.result .btn {
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn button {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    background: #107041;
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
